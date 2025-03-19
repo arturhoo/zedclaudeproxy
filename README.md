@@ -21,6 +21,9 @@ go run .
 
 # Custom configuration
 go run . --listen=0.0.0.0:8080 --target=https://api.anthropic.com --budget=2048
+
+# Without go installed locally
+docker run --rm -it -p 8080:8080 -v "$(pwd):/app" -w "/app" golang:alpine sh -c "exec go run main.go"
 ```
 
 ## Zed Configuration
